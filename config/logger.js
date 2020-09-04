@@ -14,7 +14,7 @@ const logger = createLogger({
     new transports.Console(),
     new transports.MongoDB({
       level: 'info',
-      db: 'mongodb+srv://roggoncalves:olindaro86@cluster0.liceb.azure.mongodb.net/grades?retryWrites=true&w=majority',
+      db: `mongodb+srv://${process.env.USERDB}:${process.env.PWDDB}@cluster0.liceb.azure.mongodb.net/grades?retryWrites=true&w=majority`,
       collection: 'logs_grades',
       capped: true,
       cappedMax: 20,
